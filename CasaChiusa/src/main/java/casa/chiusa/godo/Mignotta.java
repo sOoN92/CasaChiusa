@@ -16,7 +16,11 @@ public class Mignotta {
 	private int id;
 	private String nomeCompleto;
 	private String nazione;
-	private Prezzi prezzi;
+	
+	private int prezzoFiga;
+	private int prezzoCulo;
+	private int prezzoBocca;
+	private int allHour;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idCliente")
@@ -46,14 +50,6 @@ public class Mignotta {
 		this.nazione = nazione;
 	}
 
-	public Prezzi getPrezzi() {
-		return prezzi;
-	}
-
-	public void setPrezzi(Prezzi prezzi) {
-		this.prezzi = prezzi;
-	}
-
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -62,11 +58,43 @@ public class Mignotta {
 		this.cliente = cliente;
 	}
 
+	public int getPrezzoFiga() {
+		return prezzoFiga;
+	}
+
+	public void setPrezzoFiga(int prezzoFiga) {
+		this.prezzoFiga = prezzoFiga;
+	}
+
+	public int getPrezzoCulo() {
+		return prezzoCulo;
+	}
+
+	public void setPrezzoCulo(int prezzoCulo) {
+		this.prezzoCulo = prezzoCulo;
+	}
+
+	public int getPrezzoBocca() {
+		return prezzoBocca;
+	}
+
+	public void setPrezzoBocca(int prezzoBocca) {
+		this.prezzoBocca = prezzoBocca;
+	}
+
+	public int getAllHour() {
+		return allHour;
+	}
+
+	public void setAllHour(int allHour) {
+		this.allHour = allHour;
+	}
+
 	@Override
 	public String toString() {
-		return "Mignotta [id=" + id + ", nomeCompleto=" + nomeCompleto + ", nazione=" + nazione + ", prezzi=" + prezzi
+		return "Mignotta [id=" + id + ", nomeCompleto=" + nomeCompleto + ", nazione=" + nazione + ", prezzoFiga="
+				+ prezzoFiga + ", prezzoCulo=" + prezzoCulo + ", prezzoBocca=" + prezzoBocca + ", allHour=" + allHour
 				+ ", cliente=" + cliente + "]";
 	}
-	
 	
 }
