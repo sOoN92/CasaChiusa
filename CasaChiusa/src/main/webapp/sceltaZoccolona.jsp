@@ -14,8 +14,9 @@
 Scegli la tua Maialina da sburata
 <select name="Mignotta"> 
  <% 
- List<String> listaNomiMignotta = (ArrayList<String>)request.getAttribute("listaNomiMignotte");
- 
+ List<String> listaNomiMignotta = (ArrayList<String>)request.getAttribute("listaNomiMignotte");%>
+  <%=request.getAttribute("idCliente")%>
+ <%
   if(listaNomiMignotta !=null){
   for(String mignotta : listaNomiMignotta ){
   %>

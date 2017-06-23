@@ -16,6 +16,17 @@ public class PagCliente extends HttpServlet {
 	GestioneOrdine gest = new GestioneOrdine();
 	List<String> listaIdClienti = new ArrayList<>();
 	
+	List<Mignotta> listaMignotte= new ArrayList<Mignotta>();
+	public List<String> poplamentoLista(List<Mignotta> lista){
+		List<String> listaNomiMignotte = new ArrayList<>();
+		listaMignotte = gest.listaMignotte(crud);
+		for (Mignotta mignotta : listaMignotte) {
+			listaNomiMignotte.add(mignotta.getNomeCompleto()); 
+		}
+		return listaNomiMignotte;
+		
+	}
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		listaIdClienti = gest.listaClienti(crud);
@@ -30,10 +41,10 @@ public class PagCliente extends HttpServlet {
 		String id= req.getParameter("id");
 		int idClienti = Integer.parseInt(id);
 		req.setAttribute("idCliente", id);
+		List<String> listaNomiMignotte = poplamentoLista(listaMignotte);
+		req.setAttribute("listaNomiMignotte", listaNomiMignotte);
 		RequestDispatcher disp = req.getRequestDispatcher("/sceltaZoccolona.jsp");
 		disp.forward(req, resp);
-		
-	
 	}
 	
 	

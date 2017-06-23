@@ -38,7 +38,6 @@ public class pagZoccolona extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 //		String id= req.getParameter("id");
 //		int idClienti = Integer.parseInt(id);
 //		req.setAttribute("idCliente", id);
