@@ -28,7 +28,7 @@ public class PagCliente extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String id= req.getParameter("id");
-//		int idClienti = Integer.parseInt(id);
+		int idClienti = Integer.parseInt(id);
 		req.setAttribute("idCliente", id);
 		RequestDispatcher disp = req.getRequestDispatcher("/sceltaZoccolona.jsp");
 		disp.forward(req, resp);

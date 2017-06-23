@@ -10,10 +10,16 @@ public class GestioneOrdine {
 	
 	public static List<String> listaClienti(ServicesCrud crud){
 		
-		List<String> lClienti = new ArrayList<>();
-		lClienti = crud.jpaRead("select c.id from Cliente c").getResultList();
+		List<Integer> lClienti = new ArrayList<>();
+		List<String> parsedListClienti = new ArrayList<>();
+		lClienti =  crud.jpaRead("select c.id from Cliente c").getResultList();
 		
-		return lClienti;
+		for(Integer i : lClienti){
+			String id = i.toString();
+			parsedListClienti.add(id);
+		}
+		
+		return parsedListClienti;
 		
 	}
 	

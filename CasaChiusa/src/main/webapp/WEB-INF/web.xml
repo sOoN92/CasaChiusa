@@ -3,14 +3,14 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 		version="3.0"
 		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" >
-		<display-name>Cliente</display-name>
+		<display-name>PagCliente</display-name>
 		<servlet>
 			<servlet-name>PagCliente</servlet-name>
-			<servlet-class>casa.chiusa.godo</servlet-class>
+			<servlet-class>casa.chiusa.godo.PagCliente</servlet-class>
 		</servlet>
 
 		<servlet-mapping>
-			<servlet-name>PaginaCliente</servlet-name>
-			<url-pattern>/PaginaCliente</url-pattern>
+			<servlet-name>PagCliente</servlet-name>
+			<url-pattern>/PagCliente</url-pattern>
 		</servlet-mapping>
 		</web-app>
