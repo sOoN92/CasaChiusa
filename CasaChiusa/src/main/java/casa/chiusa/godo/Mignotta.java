@@ -9,22 +9,30 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="mignotta", schema="bordello")
+@Table(name="Mignotta", schema="bordello")
 public class Mignotta {
 	@Id
 	@GeneratedValue
 	private int id;
 	private String nomeCompleto;
 	private String nazione;
-	
-	private int prezzoFiga;
-	private int prezzoCulo;
-	private int prezzoBocca;
-	private int allHour;
+	static private int prezzoFiga = 30;
+	static private int prezzoCulo = 40;
+	static private int prezzoBocca = 15;
+	static private int tuttoPerUnOra = 100;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
+	
+	public Mignotta(){
+		super();
+	}
+	
+	public Mignotta(String nomeCompleto, String nazione){
+		this.nomeCompleto = nomeCompleto;
+		this.nazione = nazione;
+	}
 
 	public int getId() {
 		return id;
@@ -58,43 +66,41 @@ public class Mignotta {
 		this.cliente = cliente;
 	}
 
-	public int getPrezzoFiga() {
+	public static int getPrezzoFiga() {
 		return prezzoFiga;
 	}
 
-	public void setPrezzoFiga(int prezzoFiga) {
-		this.prezzoFiga = prezzoFiga;
+	public static void setPrezzoFiga(int prezzoFiga) {
+		Mignotta.prezzoFiga = prezzoFiga;
 	}
 
-	public int getPrezzoCulo() {
+	public static int getPrezzoCulo() {
 		return prezzoCulo;
 	}
 
-	public void setPrezzoCulo(int prezzoCulo) {
-		this.prezzoCulo = prezzoCulo;
+	public static void setPrezzoCulo(int prezzoCulo) {
+		Mignotta.prezzoCulo = prezzoCulo;
 	}
 
-	public int getPrezzoBocca() {
+	public static int getPrezzoBocca() {
 		return prezzoBocca;
 	}
 
-	public void setPrezzoBocca(int prezzoBocca) {
-		this.prezzoBocca = prezzoBocca;
+	public static void setPrezzoBocca(int prezzoBocca) {
+		Mignotta.prezzoBocca = prezzoBocca;
 	}
 
-	public int getAllHour() {
-		return allHour;
+	public static int getTuttoPerUnOra() {
+		return tuttoPerUnOra;
 	}
 
-	public void setAllHour(int allHour) {
-		this.allHour = allHour;
+	public static void setTuttoPerUnOra(int tuttoPerUnOra) {
+		Mignotta.tuttoPerUnOra = tuttoPerUnOra;
 	}
 
 	@Override
 	public String toString() {
-		return "Mignotta [id=" + id + ", nomeCompleto=" + nomeCompleto + ", nazione=" + nazione + ", prezzoFiga="
-				+ prezzoFiga + ", prezzoCulo=" + prezzoCulo + ", prezzoBocca=" + prezzoBocca + ", allHour=" + allHour
-				+ ", cliente=" + cliente + "]";
+		return "Mignotta [id=" + id + ", nomeCompleto=" + nomeCompleto + ", nazione=" + nazione + ", cliente=" + cliente
+				+ "]";
 	}
-	
 }

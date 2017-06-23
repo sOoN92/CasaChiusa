@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.OneToMany;
 
 @Entity
-@Table(name="cliente", schema="bordello")
+@Table(name="Cliente", schema="bordello")
 public class Cliente {
 	
 	@Id
@@ -20,6 +20,13 @@ public class Cliente {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente")
 	private List<Mignotta> listaMignotte = new ArrayList<>();
 	
+	public Cliente(){
+		super();
+	};
+	
+	public Cliente(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
 	
 	public int getId() {
 		return id;
