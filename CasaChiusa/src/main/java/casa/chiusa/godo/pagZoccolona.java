@@ -17,15 +17,19 @@ public class pagZoccolona extends HttpServlet {
 	
 
 	List<Mignotta> listaMignotte= new ArrayList<Mignotta>();
-	List<String> listaNomiMignotte = new ArrayList<>();
-	
-	
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	public List<String> poplamentoLista(List<Mignotta> lista){
+		List<String> listaNomiMignotte = new ArrayList<>();
 		listaMignotte = gest.listaMignotte(crud);
 		for (Mignotta mignotta : listaMignotte) {
 			listaNomiMignotte.add(mignotta.getNomeCompleto()); 
 		}
+		return listaNomiMignotte;
+		
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		List<String> listaNomiMignotte = poplamentoLista(listaMignotte);
 		req.setAttribute("listaNomiMignotte", listaNomiMignotte);
 		RequestDispatcher disp = req.getRequestDispatcher("/sceltaZoccolona.jsp");
 		disp.forward(req, resp);

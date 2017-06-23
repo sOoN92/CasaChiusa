@@ -9,7 +9,7 @@
 <title>Casa chiusa</title>
 </head>
 <body>
-	<form action="SceltaIdCliente" method="post">
+	<form action="PagCliente" method="post">
 		Scegli il tuo id Maialone <select name="id">
 			<%
 				List<String> listaId = (ArrayList<String>) request.getAttribute("listaIdClienti");

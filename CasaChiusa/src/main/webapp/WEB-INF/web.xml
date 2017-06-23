@@ -13,7 +13,8 @@
 			<servlet-name>PagCliente</servlet-name>
 			<url-pattern>/PagCliente</url-pattern>
 		</servlet-mapping>
-		<display-name>PagCliente</display-name>
+		
+		<display-name>pagZoccolona</display-name>
 		<servlet>
 			<servlet-name>pagZoccolona</servlet-name>
 			<servlet-class>casa.chiusa.godo.pagZoccolona</servlet-class>

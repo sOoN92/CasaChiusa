@@ -10,7 +10,7 @@
 <title>Casa chiusa</title>
 </head>
 <body>
-<form action="SceltaMignotta" method="post">
+<form action="pagZoccolona" method="post">
 Scegli la tua Maialina da sburata
 <select name="Mignotta"> 
  <% 
