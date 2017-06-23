@@ -20,7 +20,7 @@ public class GestioneOrdine {
 public static List<Mignotta> listaMignotte(ServicesCrud crud){
 		
 		List<Mignotta> lMignotte = new ArrayList<>();
-		lMignotte = crud.jpaRead("select m from Mignotta m").getResultList();
+		lMignotte = crud.jpaRead("select m from Mignotta m where idCliente IS NULL").getResultList();
 		
 		return lMignotte;
 		
